@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Namespace</title>
+</head>
+
+<body>
+    <center>
+        <h1 id="myData"></h1>
+    </center>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        const socket = io('/marketing');
+        socket.on('marketingMsg', (data) => {
+            document.getElementById('myData').innerHTML = data;
+        })
+    </script>
+</body>
+
+</html>
